@@ -1,11 +1,13 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
-<h1>{{ .Params.title }}</h1>
+	{{ partial "banner" site.Data.banner }}
+	{{ partial "spotlight" site.Data.spotlight1 }}
+	{{ partial "spotlight" site.Data.spotlight2 }}
+	{{ partial "spotlight" site.Data.spotlight3 }}
+	{{ partial "gallery" site.Data.gallery }}
+	{{ partial "items" site.Data.items }}
+	{{ partial "elements" . }}
+	{{ partial "elements_reference" . }}
+	{{ partial "template/footer" . }}
 
-<p>{{ .Params.blurb }}</p>
-
-<h2>{{ .Params.section.heading }}</h2>
-
-<p>{{ .Params.section.text }}</p>
-
-{{ partial "footer.html" . }}
+{{ end }}
